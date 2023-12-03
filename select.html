@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      tr,
+      td {
+        border: 1px solid darkblue;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <p id="demo">Lorem ipsum dolor sit amet.</p>
+    <span class="sp1">test1</span>
+    <span class="sp1">test2</span>
+    <span class="sp1">test3</span>
+    <span class="sp1">test4</span>
+    <span class="sp1">test5</span>
+    <span>test</span> 
+
+    <table>
+      <tr>
+        <th>row</th>
+        <th>name</th>
+      </tr>
+      <tbody id="tbody"> 
+      
+      </tbody> 
+    </table> 
+
+     <ul id="demo"></ul> 
+
+    <button onclick="clickbtn()">click me</button>
+    <input type="text" id="fname" /> 
+    <script>
+        document.getElementById("demo").innerHTML = "<b>pedram</b>";
+        document.getElementById("demo").innerText = "<b>pedram</b>";
+        let elements = document.getElementsByClassName("sp1");
+        elements[1].innerText = "hello";
+        elements[4].innerText = "gangi";
+        document.getElementsByTagName("span")[5].innerText = "rostami";
+
+        // *****************************************
+
+        let stds = ["pedram", "ali", "amir", "roza", "akbar"];
+        let tbody = document.getElementById("tbody");
+
+        for (let i = 0; i < stds.length; i++) {
+          tbody.innerHTML += `<tr>
+                  <td>${i + 1}</td>
+                  <td>${stds[i]}</td>
+              </tr>`;
+        }
+
+    //   ***************************************************************
+
+      document.getElementById("demo").innerHTML += "<li>task1</li>";
+      document.getElementById("demo").innerHTML += "<li>task2</li>";
+      document.getElementById("demo").innerHTML += "<li>task3</li>";
+
+        document.getElementById("demo").innerHTML += `<li>${tasks[0]}</li>`;
+        document.getElementById("demo").innerHTML += `<li>${tasks[1]}</li>`;
+        document.getElementById("demo").innerHTML += `<li>${tasks[2]}</li>`;
+
+        let tasks = ["task 1", "task2", "task3"];
+        for (let i = 0; i < tasks.length; i++) {
+          document.getElementById("demo").innerHTML += `<li>${tasks[i]}</li>`;
+        }
+
+      function clickbtn() {
+        let fname = document.getElementById("fname").value;
+        alert(`Hello ${fname}`);
+      } 
+    </script>
+  </body>
+</html>
